@@ -1,2 +1,2 @@
 #!/bin/bash -x
-echo "Welcome TO The User Registration"
+echo "Welcome To The User Registration"
