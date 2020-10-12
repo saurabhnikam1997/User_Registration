@@ -3,15 +3,24 @@ echo "Welcome To The User Registration"
 
 checkDetails()
 {
-read -p "Enter Your Valid First Name" firstname
+read -p "Enter First Name " firstname
+read -p "Enter Last Name " lastname
 
-pattern="^[A-Z{1}[a-z]{2,}$"
+pattern="^[A-Z][a-z]{2,}$"
 
 if [[ $firstname =~ $pattern ]]
 then
-	echo Name is valid
+   echo Valid First Name
 else
-	echo Invalid Name
+   echo Invalid First Name
 fi
+
+if [[ $lastname =~ $pattern ]]
+then
+   echo Valid Last Name
+else
+   echo Invalid Last Name
+fi
+
 }
 checkDetails
