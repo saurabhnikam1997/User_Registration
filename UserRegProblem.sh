@@ -1,12 +1,17 @@
 #!/bin/bash -x
 echo "Welcome To The User Registration"
 
-read -p "Enter Your Valid First Name" value
-pattern="^[A-Z]{1}[a-z]{3,}$"
+checkDetails()
+{
+read -p "Enter Your Valid First Name" firstname
 
-if [[ $value =~ $pattern ]]
+pattern="^[A-Z{1}[a-z]{2,}$"
+
+if [[ $firstname =~ $pattern ]]
 then
 	echo Name is valid
 else
 	echo Invalid Name
 fi
+}
+checkDetails
