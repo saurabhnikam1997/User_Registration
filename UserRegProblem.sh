@@ -11,7 +11,7 @@ read -p "Enter Email-id " email
 namePattern="^[A-Z][a-z]{2,}$"
 
 emailPattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-
+mobilePattern="^[0-9]{2}\s{1}[0-9]{10}$"
 
 checkFirstName()
 {
@@ -41,11 +41,24 @@ checkEmail()
 
 	if [[ $email =~ $emailPattern ]]
 	then
-   	echo Valid Email-Id
+   	 	echo Valid Email-Id
 	else
-   	echo Invalid Email-Id
+   		echo Invalid Email-Id
 	fi
+}
+checkMobileNumber()
+{
+	echo "Enter Mobile Number With Country Code "
+	read mobile
+	if [[ $mobile =~ $mobilePattern ]]
+   	then
+      		echo Valid Mobile Number
+   	else
+      		echo Invalid Mobile Number
+   	fi
+
 }
 checkFirstName $firstname
 checkLastName $lastname
 checkEmail $email
+checkMobileNumber $mobile
