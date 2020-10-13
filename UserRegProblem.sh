@@ -12,7 +12,7 @@ namePattern="^[A-Z][a-z]{2,}$"
 
 emailPattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
 mobilePattern="^[0-9]{2}[-]{1}[0-9]{10}$"
-passwordPattern="^[0-9]{8}$"
+passwordPattern="^([A-Za-z0-9!@#$%^&*.?-_]{8,}$)"
 checkFirstName()
 {
 	firstname=$1
