@@ -13,7 +13,7 @@ namePattern="^[A-Z][a-z]{2,}$"
 emailPattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
 mobilePattern="^[0-9]{2}[-]{1}[0-9]{10}$"
 
-passwordPattern="^[A-Z]{1}[A-Za-z0-9!@#$%^&*.]{8,}$"
+passwordPattern="^([a-zA-Z]*[0-9]+[a-z0-9]*[A-Z])|([A-Z][a-z0-9]*+[0-9][a-zA-Z]*)$"
 
 checkFirstName()
 {
