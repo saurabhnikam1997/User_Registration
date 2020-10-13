@@ -14,6 +14,7 @@ emailPattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
 mobilePattern="^[0-9]{2}[-]{1}[0-9]{10}$"
 
 passwordPattern="^([a-zA-Z]*[0-9]+[a-z0-9]*[A-Z])|([A-Z][a-z0-9]*+[0-9][a-zA-Z]*)$"
+specialCharacter="[\^$.|?*+()[{]{1}"
 
 checkFirstName()
 {
@@ -62,17 +63,17 @@ checkMobileNumber()
 }
 checkPassword()
 {
-        echo "Enter Password "
-        read Password
-        if [[ $Password =~ $passwordPattern ]]
-        then
-                echo Valid Password
-        else
-                echo Invalid Password
-        fi
-
+   read -p "Enter password " password
+	if [[ ${#password} -ge 8 ]]; then
+   	if [[ $password =~ $passwordPattern && $password =~ $specialCharacter ]]; then
+      	echo Valid Password
+   	else
+      	echo Invalid Password
+   	fi
+	else
+		echo Password Should Be Min 8 Chars Long
+	fi
 }
-
 checkFirstName $firstname
 checkLastName $lastname
 checkEmail $email
