@@ -12,7 +12,7 @@ namePattern="^[A-Z][a-z]{2,}$"
 
 emailPattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
 mobilePattern="^[0-9]{2}[-]{1}[0-9]{10}$"
-
+passwordPattern="^[0-9]{8}$"
 checkFirstName()
 {
 	firstname=$1
@@ -58,7 +58,21 @@ checkMobileNumber()
    	fi
 
 }
+checkPassword()
+{
+        echo "Enter Password "
+        read Password
+        if [[ $Password =~ $passwordPattern ]]
+        then
+                echo Valid Password
+        else
+                echo Invalid Password
+        fi
+
+}
+
 checkFirstName $firstname
 checkLastName $lastname
 checkEmail $email
 checkMobileNumber $mobile
+checkPassword $Password
