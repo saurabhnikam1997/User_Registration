@@ -10,7 +10,7 @@ read -p "Enter Email-id " email
 
 namePattern="^[A-Z][a-z]{2,}$"
 
-emailPattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+emailPattern="^[a-zA-Z0-9]{1,}([.]?[-]?[+]?[a-zA-Z0-9]{1,})?[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-z]{2,3}([.]?[a-z]{2})?$"
 mobilePattern="^[0-9]{2}[-]{1}[0-9]{10}$"
 
 passwordPattern="^([a-zA-Z]*[0-9]+[a-z0-9]*[A-Z])|([A-Z][a-z0-9]*+[0-9][a-zA-Z]*)$"
